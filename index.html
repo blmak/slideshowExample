@@ -19,13 +19,13 @@
 				$('div.image').toggleClass("inactive");
 				$("div.image").fadeToggle(3000, "linear");
 				$(".inactive").html('<img src="'+slideshowData[this.activePage].image+'">');
+				$("#pagecount").html("Page " + (this.activePage+1) + " of "+ this.slideshowLength);
 				if(this.activePage==this.slideshowLength-1){
 					this.activePage = 0;
 				}
 	  		else {
 		  		this.activePage++;
 	  		}
-				$("#pagecount").html("Page " + (this.activePage) + " of "+ this.slideshowLength);
 			}
 			this.clickLeft = function clickRight() {
 				if(this.activePage == 0){
