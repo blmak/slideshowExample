@@ -17,7 +17,9 @@
 			}
 			this.clickRight = function clickRight() {
 				$('div.image').toggleClass("inactive");
-				$("div.image").fadeToggle(3000, "linear");
+				$("div.image").fadeToggle(3000, "linear", function(){
+					$('button').removeAttr('disabled');
+				});
 				$(".inactive").html('<img src="'+slideshowData[this.activePage].image+'">');
 				$("#pagecount").html("Page " + (this.activePage+1) + " of "+ this.slideshowLength);
 				if(this.activePage==this.slideshowLength-1){
@@ -47,6 +49,7 @@
 			slideShow.loadShow();
 
 			$("button.right").click(function () {
+				$('button').attr('disabled', true);
 				slideShow.clickRight();
 			});
 
