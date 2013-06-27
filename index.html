@@ -19,6 +19,7 @@
 				$('div.image').toggleClass("inactive");
 				$("div.image").fadeToggle(3000, "linear", function(){
 					$('button').removeAttr('disabled');
+					$('button').css({'display': 'block'});
 				});
 				$(".inactive").html('<img src="'+slideshowData[this.activePage].image+'">');
 				$("#pagecount").html("Page " + (this.activePage+1) + " of "+ this.slideshowLength);
@@ -49,6 +50,7 @@
 			slideShow.loadShow();
 
 			$("button.right").click(function () {
+				$('button').css({'display': 'none'});
 				$('button').attr('disabled', true);
 				slideShow.clickRight();
 			});
